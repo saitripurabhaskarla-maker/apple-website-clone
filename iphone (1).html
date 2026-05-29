@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>iPhone — Apple</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .iphone-hero { background: linear-gradient(180deg,#000 0%,#1a1a2e 100%); color:#fff; }
+    .iphone-hero h1 { background: linear-gradient(135deg,#fff 40%,#a0c4ff); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .feature-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:#000; }
+    .feature-strip .feat { background:#111; color:#fff; padding:40px 32px; }
+    .feature-strip .feat h3 { font-size:22px; font-weight:700; margin-bottom:8px; }
+    .feature-strip .feat p { font-size:14px; color:#86868b; line-height:1.6; }
+    #compare { scroll-margin-top: 60px; }
+  </style>
+</head>
+<body>
+<nav class="nav" id="top-nav">
+  <div class="nav-inner">
+    <a href="home.html" class="nav-logo">
+      <svg height="18" viewBox="0 0 814 1000" fill="currentColor"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.8 135.4-317.9 268.7-317.9 68.4 0 125.3 44.9 169.2 44.9 42.1 0 108.1-47.6 185.1-47.6 29.8 0 130.6 2.6 198.6 99.8z"/><path d="M549.5 83c-19.2 23.6-49.3 41.5-78.7 41.5-3.8 0-7.7-.4-11.5-1.1-1-3.2-1.5-6.6-1.5-10.3 0-23.6 14.3-48.7 37.9-65.3 11.9-8.3 31-15.8 48.1-16.8 1 3.9 1.4 7.8 1.4 11.7 0 22.7-9.3 46.3-25.7 63.3z"/></svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="store.html">Store</a></li>
+      <li><a href="mac.html">Mac</a></li>
+      <li><a href="ipad.html">iPad</a></li>
+      <li><a href="iphone (1).html" style="opacity:1;font-weight:600">iPhone</a></li>
+      <li><a href="watch.html">Watch</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="icon-btn" id="searchToggle"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="6.5" cy="6.5" r="5.75" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <a href="store.html" class="icon-btn"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M5.5 5.5V4a3 3 0 0 1 6 0v1.5M2 5.5h13l-1.2 9H3.2L2 5.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 17 17" fill="none"><circle cx="6.5" cy="6.5" r="5.75" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" placeholder="Search apple.com" autocomplete="off"/>
+      <button class="cancel-btn" id="cancelSearch">Cancel</button>
+    </div>
+    <div class="search-suggestions" id="searchSuggestions">
+      <div class="suggestions-section">
+        <p class="suggestions-label">Quick Links</p>
+        <ul id="suggestionsList"></ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="page-hero iphone-hero">
+    <p class="eyebrow">iPhone 16 Pro</p>
+    <h1>Hello, Apple Intelligence.</h1>
+    <p>The first iPhone built for Apple Intelligence. Featuring A18 Pro chip, Camera Control, and the most advanced Pro camera system ever on iPhone.</p>
+    <div class="hero-cta">
+      <a href="store.html" class="btn-primary">Buy</a>
+      <a href="#compare" class="btn-secondary">Compare models ↓</a>
+    </div>
+    <a href="store.html"><img src="hero-phone.jpg" alt="iPhone 16 Pro" style="max-width:900px;width:100%;margin:32px auto 0;display:block;border-radius:18px;"/></a>
+  </section>
+
+  <section class="feature-strip">
+    <div class="feat"><h3>A18 Pro chip</h3><p>The most powerful chip ever in a smartphone. Up to 4× faster neural engine for Apple Intelligence.</p></div>
+    <div class="feat"><h3>Camera Control</h3><p>A dedicated hardware button for your camera. Tap, swipe, and press to control every aspect of photography.</p></div>
+    <div class="feat"><h3>48 MP Fusion camera</h3><p>New 48 MP ultra‑wide, tetra-prism 5× optical zoom telephoto. The most versatile iPhone camera system ever.</p></div>
+  </section>
+
+  <section class="product-section" id="compare">
+    <h2>Compare iPhone models</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="iphone-pro.jpg" alt="iPhone 16 Pro Max" style="height:120px;width:auto;margin:0 auto 12px;object-fit:contain;display:block;" loading="lazy"/><h3>iPhone 16 Pro Max</h3><p>6.9″ Super Retina XDR display, A18 Pro, up to 33 hr video playback</p><p class="price">From $1199</p><a href="store.html" class="btn-primary">Buy</a></div>
+      <div class="product-card"><img src="iphone-pro.jpg" alt="iPhone 16 Pro" style="height:120px;width:auto;margin:0 auto 12px;object-fit:contain;display:block;" loading="lazy"/><h3>iPhone 16 Pro</h3><p>6.3″ Super Retina XDR display, A18 Pro, Camera Control</p><p class="price">From $999</p><a href="store.html" class="btn-primary">Buy</a></div>
+      <div class="product-card"><img src="hero-phone.jpg" alt="iPhone 16" style="height:120px;width:auto;margin:0 auto 12px;object-fit:contain;display:block;" loading="lazy"/><h3>iPhone 16</h3><p>6.1″ Super Retina XDR display, A18 chip, Action Button</p><p class="price">From $799</p><a href="store.html" class="btn-primary">Buy</a></div>
+      <div class="product-card"><img src="hero-phone.jpg" alt="iPhone 15" style="height:120px;width:auto;margin:0 auto 12px;object-fit:contain;display:block;" loading="lazy"/><h3>iPhone 15</h3><p>6.1″ Super Retina XDR display, A16 Bionic chip, Dynamic Island</p><p class="price">From $699</p><a href="store.html" class="btn-primary">Buy</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-inner"><p class="footer-note">Copyright &copy; 2025 Apple Inc. Educational.</p><ul class="footer-links"><li><a href="support.html">Support</a></li><li><a href="store.html">Store</a></li><li><a href="home.html">Home</a></li></ul></div></footer>
+<script src="search.js"></script>
+<script>
+(function(){
+  var nav = document.getElementById('top-nav');
+  if(nav) window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, {passive:true});
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08});
+  document.querySelectorAll('.product-card,.store-card,.feat,.card,.tile,.featured-banner,.financing-strip,.tradein-strip').forEach(function(el){
+    el.classList.add('animate-on-scroll');
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

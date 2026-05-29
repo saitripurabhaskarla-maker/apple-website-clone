@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apple</title>
+<meta name="description" content="Discover the innovative world of Apple and shop everything iPhone, Mac, iPad, Apple Watch, and accessories." />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;background:#fff;color:#1d1d1f}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font:inherit;border:0;background:transparent;cursor:pointer;color:inherit}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);color:rgba(255,255,255,.9);font-size:12px}
+  .nav-inner{max-width:1024px;margin:0 auto;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+  .nav a, .nav button{opacity:.8;transition:opacity .2s}
+  .nav a:hover, .nav button:hover{opacity:1}
+  .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+  .nav .icons{display:flex;gap:20px;align-items:center}
+  .nav svg{display:block}
+  @media (max-width:833px){.nav ul{display:none}}
+
+  /* HERO */
+  .hero{overflow:hidden;text-align:center;padding:48px 16px 0}
+  .hero.dark{background:#000;color:#fff}
+  .hero.light{background:#f5f5f7;color:#1d1d1f}
+  .hero-inner{max-width:1440px;margin:0 auto}
+  .hero .eyebrow{font-size:14px;font-weight:500;margin:0 0 8px;opacity:.9}
+  .hero h1{font-size:clamp(40px,5vw,56px);line-height:1.07;letter-spacing:-.005em;font-weight:600;margin:0}
+  .hero .sub{font-size:clamp(18px,2vw,21px);margin:12px 0 0;opacity:.95}
+  .cta-row{display:flex;justify-content:center;gap:24px;margin-top:20px;font-size:17px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;background:#0071e3;color:#fff;padding:8px 20px;border-radius:980px;transition:background .2s}
+  .btn:hover{background:#0077ed}
+  .link{color:#2997ff;display:inline-flex;align-items:center;gap:2px}
+  .link:hover{text-decoration:underline}
+  .hero.light .link{color:#0066cc}
+  .hero-img{margin:32px auto 0;max-width:1100px}
+
+  /* TWO-UP */
+  .twoup{background:#fbfbfd;padding:8px 0}
+  .twoup-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:1440px;margin:0 auto;padding:0 8px}
+  .tile{text-align:center;padding:48px 16px 0;overflow:hidden}
+  .tile.light{background:#f5f5f7;color:#1d1d1f}
+  .tile.dark{background:#000;color:#fff}
+  .tile .eyebrow{font-size:14px;opacity:.8;margin:0 0 4px}
+  .tile h3{font-size:clamp(28px,3.5vw,40px);font-weight:600;margin:0;letter-spacing:-.005em;line-height:1.1}
+  .tile img{margin:24px auto 0;max-width:520px}
+  @media (max-width:734px){.twoup-grid{grid-template-columns:1fr}}
+
+  /* FOOTER */
+  footer{background:#f5f5f7;color:#6e6e73;font-size:12px}
+  .foot-inner{max-width:980px;margin:0 auto;padding:32px 20px}
+  .foot-top{padding-bottom:16px;border-bottom:1px solid #d2d2d7;line-height:1.6}
+  .foot-top a{color:#0066cc}
+  .foot-top a:hover{text-decoration:underline}
+  .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:32px 0;border-bottom:1px solid #d2d2d7}
+  .cols h4{color:#1d1d1f;font-size:12px;margin:0 0 12px}
+  .cols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .cols a:hover{text-decoration:underline}
+  .foot-bottom{padding-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:center}
+  .foot-bottom ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px}
+  .foot-bottom a:hover{text-decoration:underline}
+  @media (max-width:734px){.cols{grid-template-columns:repeat(2,1fr)}}
+
+  /* TOAST */
+  .toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,16px);background:#1d1d1f;color:#fff;padding:12px 20px;border-radius:980px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  /* BAG */
+  .bag{position:fixed;top:44px;right:16px;background:#fff;color:#1d1d1f;border:1px solid #d2d2d7;border-radius:18px;padding:16px;width:280px;box-shadow:0 20px 40px rgba(0,0,0,.18);display:none;z-index:60}
+  .bag.open{display:block}
+  .bag h5{margin:0 0 8px;font-size:14px}
+  .bag ul{list-style:none;padding:0;margin:0;font-size:13px;max-height:200px;overflow:auto}
+  .bag li{padding:6px 0;border-bottom:1px solid #f1f1f3;display:flex;justify-content:space-between;gap:8px}
+  .bag li button{font-size:12px;color:#0066cc}
+  .bag-empty{font-size:13px;color:#6e6e73}
+
+  /* SEARCH */
+  .search{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-start;justify-content:center;padding-top:80px;z-index:70}
+  .search.open{display:flex}
+  .search-box{background:#fff;border-radius:18px;padding:20px;width:min(600px,92vw);box-shadow:0 30px 60px rgba(0,0,0,.3)}
+  .search-box input{width:100%;font-size:18px;padding:12px 16px;border:1px solid #d2d2d7;border-radius:12px;outline:none}
+  .search-box input:focus{border-color:#0071e3}
+  .search-results{margin-top:12px;font-size:14px;color:#1d1d1f}
+  .search-results a{display:block;padding:8px;border-radius:8px}
+  .search-results a:hover{background:#f5f5f7}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Global">
+  <div class="nav-inner">
+    <a href="#" data-track="logo" aria-label="Apple">
+      <svg viewBox="0 0 14 18" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M11.624 9.49c-.018-1.97 1.61-2.92 1.683-2.966-.918-1.34-2.345-1.524-2.85-1.543-1.214-.123-2.37.715-2.987.715-.617 0-1.566-.697-2.575-.678-1.325.019-2.546.77-3.227 1.957-1.376 2.386-.352 5.91 1.0 7.846.66.948 1.447 2.012 2.476 1.973.994-.04 1.37-.643 2.572-.643 1.2 0 1.541.643 2.59.624 1.07-.018 1.748-.967 2.402-1.92.756-1.103 1.067-2.17 1.085-2.225-.024-.012-2.083-.8-2.105-3.14zM9.7 3.66c.548-.665.918-1.59.817-2.51-.79.032-1.747.526-2.314 1.19-.508.59-.952 1.532-.832 2.434.88.068 1.78-.45 2.33-1.114z"/></svg>
+    </a>
+    <ul id="navlinks"></ul>
+    <div class="icons">
+      <button id="searchBtn" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <button id="bagBtn" aria-label="Shopping Bag">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="bag" class="bag" role="dialog" aria-label="Shopping bag">
+  <h5>Your Bag</h5>
+  <ul id="bagList"></ul>
+  <p id="bagEmpty" class="bag-empty">Your bag is empty.</p>
+</div>
+
+<div id="search" class="search" role="dialog" aria-label="Search">
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Search apple.com" autocomplete="off" />
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<main>
+  <section class="hero dark" id="iphone">
+    <div class="hero-inner">
+      <p class="eyebrow">iPhone 17 Pro</p>
+      <h1>The ultimate iPhone.</h1>
+      <p class="sub">Built for Apple Intelligence.</p>
+      <div class="cta-row">
+        <a href="#" class="btn" data-learn="iPhone 17 Pro">Learn more</a>
+        <a href="#" class="link" data-buy="iPhone 17 Pro">Buy <span>›</span></a>
+      </div>
+      <div class="hero-img"><img src="hero-phone.jpg" alt="iPhone 17 Pro" width="1920" height="1080" /></div>
+    </div>
+  </section>
+
+  <section class="hero light" id="mac">
+    <div class="hero-inner">
+      <p class="eyebrow">MacBook Pro</p>
+      <h1>A monster win for pros.</h1>
+      <p class="sub">Supercharged by the M-series chip.</p>
+      <div class="cta-row">
+        <a href="#" class="btn" data-learn="MacBook Pro">Learn more</a>
+        <a href="#" class="link" data-buy="MacBook Pro">Buy <span>›</span></a>
+      </div>
+      <div class="hero-img"><img src="laptop.jpg" alt="MacBook Pro" width="1920" height="1080" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="twoup">
+    <div class="twoup-grid">
+      <div class="tile light">
+        <p class="eyebrow">AirPods Pro</p>
+        <h3>Adaptive Audio.<br/>Now playing.</h3>
+        <div class="cta-row">
+          <a href="#" class="btn" data-learn="AirPods Pro">Learn more</a>
+          <a href="#" class="link" data-buy="AirPods Pro">Buy <span>›</span></a>
+        </div>
+        <img src="earbuds.jpg" alt="AirPods Pro" width="1200" height="1200" loading="lazy" />
+      </div>
+      <div class="tile dark">
+        <p class="eyebrow">Apple Watch Series 10</p>
+        <h3>Thinstant classic.</h3>
+        <div class="cta-row">
+          <a href="#" class="btn" data-learn="Apple Watch Series 10">Learn more</a>
+          <a href="#" class="link" data-buy="Apple Watch Series 10">Buy <span>›</span></a>
+        </div>
+        <img src="watch.jpg" alt="Apple Watch" width="1200" height="1200" loading="lazy" />
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <p class="foot-top">More ways to shop: <a href="#" data-track="find-store">Find an Apple Store</a> or <a href="#" data-track="other-retailer">other retailer</a> near you. Or call 1-800-MY-APPLE.</p>
+    <div class="cols" id="footCols"></div>
+    <div class="foot-bottom">
+      <p>Copyright © 2026 Apple Inc. All rights reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Sales and Refunds</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Site Map</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // Nav links
+  var navLinks = ["Store","Mac","iPad","iPhone","Watch","Vision","AirPods","TV & Home","Entertainment","Accessories","Support"];
+  var ul = document.getElementById('navlinks');
+  navLinks.forEach(function(l){
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#'; a.textContent = l; a.dataset.track = 'nav:'+l;
+    li.appendChild(a); ul.appendChild(li);
+  });
+
+  // Footer cols
+  var cols = [
+    {title:"Shop and Learn", links:["Store","Mac","iPad","iPhone","Watch","AirPods","Accessories"]},
+    {title:"Services", links:["Apple Music","Apple TV+","Apple Fitness+","iCloud+","Apple One"]},
+    {title:"Account", links:["Manage Your Apple ID","Apple Store Account","iCloud.com"]},
+    {title:"About Apple", links:["Newsroom","Apple Leadership","Career Opportunities","Investors","Contact Apple"]}
+  ];
+  var foot = document.getElementById('footCols');
+  cols.forEach(function(c){
+    var d = document.createElement('div');
+    var h = document.createElement('h4'); h.textContent = c.title; d.appendChild(h);
+    var u = document.createElement('ul');
+    c.links.forEach(function(l){
+      var li = document.createElement('li');
+      var a = document.createElement('a'); a.href='#'; a.textContent=l; a.dataset.track='footer:'+l;
+      li.appendChild(a); u.appendChild(li);
+    });
+    d.appendChild(u); foot.appendChild(d);
+  });
+
+  // Toast
+  var toast = document.getElementById('toast'), toastT;
+  function showToast(msg){
+    toast.textContent = msg; toast.classList.add('show');
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){toast.classList.remove('show')}, 1800);
+  }
+
+  // Bag
+  var bag = [];
+  var bagEl = document.getElementById('bag');
+  var bagList = document.getElementById('bagList');
+  var bagEmpty = document.getElementById('bagEmpty');
+  function renderBag(){
+    bagList.innerHTML = '';
+    if(!bag.length){bagEmpty.style.display='block';return}
+    bagEmpty.style.display='none';
+    bag.forEach(function(item, i){
+      var li = document.createElement('li');
+      var span = document.createElement('span'); span.textContent = item;
+      var btn = document.createElement('button'); btn.textContent='Remove';
+      btn.addEventListener('click', function(){bag.splice(i,1); renderBag(); showToast('Removed '+item)});
+      li.appendChild(span); li.appendChild(btn);
+      bagList.appendChild(li);
+    });
+  }
+  renderBag();
+  document.getElementById('bagBtn').addEventListener('click', function(e){
+    e.stopPropagation();
+    bagEl.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e){
+    if(!bagEl.contains(e.target) && e.target.id!=='bagBtn') bagEl.classList.remove('open');
+  });
+
+  // Search
+  var searchEl = document.getElementById('search');
+  var searchInput = document.getElementById('searchInput');
+  var searchResults = document.getElementById('searchResults');
+  var searchable = navLinks.concat(['AirPods Pro','Apple Watch Series 10','MacBook Pro','iPhone 17 Pro']);
+  function openSearch(){searchEl.classList.add('open'); setTimeout(function(){searchInput.focus()},50)}
+  function closeSearch(){searchEl.classList.remove('open'); searchInput.value=''; searchResults.innerHTML=''}
+  document.getElementById('searchBtn').addEventListener('click', openSearch);
+  searchEl.addEventListener('click', function(e){ if(e.target===searchEl) closeSearch() });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSearch() });
+  searchInput.addEventListener('input', function(){
+    var q = searchInput.value.trim().toLowerCase();
+    searchResults.innerHTML = '';
+    if(!q) return;
+    searchable.filter(function(s){return s.toLowerCase().indexOf(q)>-1}).slice(0,6).forEach(function(s){
+      var a = document.createElement('a'); a.href='#'; a.textContent=s;
+      a.addEventListener('click', function(ev){ev.preventDefault(); closeSearch(); showToast('Going to '+s)});
+      searchResults.appendChild(a);
+    });
+  });
+
+  // Global click delegation — make EVERYTHING clickable do something
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-buy],[data-learn],[data-track],a,button');
+    if(!t) return;
+    if(t.dataset && t.dataset.buy){
+      e.preventDefault();
+      bag.push(t.dataset.buy); renderBag();
+      showToast('Added '+t.dataset.buy+' to your bag');
+      return;
+    }
+    if(t.dataset && t.dataset.learn){
+      e.preventDefault();
+      showToast('Learn more about '+t.dataset.learn);
+      return;
+    }
+    if(t.dataset && t.dataset.track){
+      e.preventDefault();
+      showToast(t.textContent.trim());
+      return;
+    }
+    // Any other anchor with href="#"
+    if(t.tagName==='A' && t.getAttribute('href')==='#'){
+      e.preventDefault();
+      if(t.textContent.trim()) showToast(t.textContent.trim());
+    }
+  });
+
+  // Make product images clickable too
+  document.querySelectorAll('main img').forEach(function(img){
+    img.style.cursor='pointer';
+    img.addEventListener('click', function(){ showToast('View '+img.alt) });
+  });
+})();
+</script>
+<script>
+(function(){
+  var nav = document.getElementById('top-nav');
+  if(nav) window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, {passive:true});
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08});
+  document.querySelectorAll('.product-card,.store-card,.feat,.card,.tile,.featured-banner,.financing-strip,.tradein-strip').forEach(function(el){
+    el.classList.add('animate-on-scroll');
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
