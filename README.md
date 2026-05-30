@@ -1,13 +1,13 @@
 #  Apple Website Clone
 A front-end clone of the Apple website developed using HTML, CSS, and JavaScript. This project was created as part of my college coursework to practice web development concepts and responsive website design.
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * HTML5
 * CSS3
 * JavaScript
 
-## ✨ Features
+##  Features
 
 * Responsive navigation bar
 * Apple-inspired homepage design
@@ -16,13 +16,13 @@ A front-end clone of the Apple website developed using HTML, CSS, and JavaScript
 * Multiple web pages
 * Mobile-friendly layout
 
-## 🚀 How to Run
+##  How to Run
 
 1. Download or clone the project.
 2. Open `home.html` in a web browser.
 3. Navigate through the website using the menu.
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 This project helped me learn:
 
@@ -32,7 +32,7 @@ This project helped me learn:
 * JavaScript DOM manipulation
 * Multi-page website development
 
-## 👩‍💻 Author
+##  Author/Done by 
 
 **Tripura Bhaskarla**
 - Roll No: `AV.SC.U4CSE25018`
